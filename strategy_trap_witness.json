@@ -1,0 +1,53 @@
+{
+  "policy": "wait_for_blast",
+  "seed": 0,
+  "result": {
+    "winner": 0,
+    "rounds": 3,
+    "reason": "opponent_hp_zero",
+    "trace": [
+      {
+        "round": 1,
+        "player": 0,
+        "card": null,
+        "mana_before": 1,
+        "hp_p0": 10,
+        "hp_p1": 10
+      },
+      {
+        "round": 1,
+        "player": 1,
+        "card": null,
+        "mana_before": 1,
+        "hp_p0": 10,
+        "hp_p1": 10
+      },
+      {
+        "round": 2,
+        "player": 0,
+        "card": null,
+        "mana_before": 2,
+        "hp_p0": 10,
+        "hp_p1": 10
+      },
+      {
+        "round": 2,
+        "player": 1,
+        "card": null,
+        "mana_before": 2,
+        "hp_p0": 10,
+        "hp_p1": 10
+      },
+      {
+        "round": 3,
+        "player": 0,
+        "card": "blast",
+        "mana_before": 3,
+        "hp_p0": 10,
+        "hp_p1": 0
+      }
+    ]
+  },
+  "n_witnesses_in_200": 200,
+  "note": "Этот пример доказывает существование конкретной выигрышной траектории, но не универсальную играбельность"
+}

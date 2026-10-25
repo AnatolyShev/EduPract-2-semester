@@ -1,0 +1,277 @@
+[
+  {
+    "scenario": "base",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 21,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "cheaper_attacks",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 21,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "stronger_attacks",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 30,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "longer_game",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 21,
+      "hp_required": 10,
+      "round_budget": 18,
+      "mana_budget": 18,
+      "max_plays": 18,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "no_healing",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 23,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 9,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "weak_but_reachable",
+    "expected_valid": true,
+    "status": "WITNESSED_OFFENSIVE_WIN",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 12,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "наблюдалась как минимум одна наступательная победа"
+  },
+  {
+    "scenario": "no_attacks",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=0 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 0,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 0,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "zero_damage",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "CONTRACT_ZERO_EFFECT: strike имеет нулевую силу damage",
+      "CONTRACT_ZERO_EFFECT: blast имеет нулевую силу damage",
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=0 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 0,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 0,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "unaffordable_attacks",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=0 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 0,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 0,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "short_horizon",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=6 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 6,
+      "hp_required": 10,
+      "round_budget": 2,
+      "mana_budget": 2,
+      "max_plays": 2,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "weak_and_short",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=3 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 3,
+      "hp_required": 10,
+      "round_budget": 4,
+      "mana_budget": 4,
+      "max_plays": 4,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "attacks_self",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "CONTRACT_TARGET: strike (damage) требует target=enemy",
+      "CONTRACT_TARGET: blast (damage) требует target=enemy",
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=0 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 0,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 0,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "heals_enemy",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "CONTRACT_TARGET: restore (heal) требует target=self"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 21,
+      "hp_required": 10,
+      "round_budget": 12,
+      "mana_budget": 12,
+      "max_plays": 12,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": 0,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "mana_bottleneck",
+    "expected_valid": false,
+    "status": "PROVEN_INVALID",
+    "violations": [
+      "PROVEN_NO_OFFENSIVE_WIN: даже оптимистическая верхняя граница урона U=4 < H=10"
+    ],
+    "optimistic_damage_proof": {
+      "upper_damage": 4,
+      "hp_required": 10,
+      "round_budget": 5,
+      "mana_budget": 5,
+      "max_plays": 5,
+      "available_attack_copies": 6,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "доказано нарушение спецификации или невозможность наступательной победы"
+  },
+  {
+    "scenario": "strategy_trap",
+    "expected_valid": true,
+    "status": "INCONCLUSIVE",
+    "violations": [],
+    "optimistic_damage_proof": {
+      "upper_damage": 10,
+      "hp_required": 10,
+      "round_budget": 3,
+      "mana_budget": 3,
+      "max_plays": 3,
+      "available_attack_copies": 2,
+      "certificate": "0/1 knapsack, копии карт из фиксированной колоды; общее число действий<=R, затраты маны<=R; порядок добора и расход по раундам оптимистически игнорируются"
+    },
+    "greedy_witness_seed": null,
+    "interpretation": "отсутствие побед в выборке ничего не доказывает"
+  }
+]

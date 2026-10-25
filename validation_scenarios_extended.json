@@ -1,0 +1,662 @@
+[
+  {
+    "name": "base",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "исходные корректные правила"
+  },
+  {
+    "name": "cheaper_attacks",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 0,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 0,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "уменьшена стоимость атак"
+  },
+  {
+    "name": "stronger_attacks",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 5,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 5,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "увеличен урон атак"
+  },
+  {
+    "name": "longer_game",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 18,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "увеличено число раундов"
+  },
+  {
+    "name": "no_healing",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "damage",
+          "value": 2,
+          "target": "enemy"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "лечение заменено корректной атакой"
+  },
+  {
+    "name": "weak_but_reachable",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 2,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 2,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "урон = 2, достижимость возможна"
+  },
+  {
+    "name": "no_attacks",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "нет атак по противнику"
+  },
+  {
+    "name": "zero_damage",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 0,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 0,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "все атаки имеют нулевой урон"
+  },
+  {
+    "name": "unaffordable_attacks",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 4,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 4,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "стоимость атак превышает запас маны"
+  },
+  {
+    "name": "short_horizon",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 2,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "недостаточно раундов для 10 HP"
+  },
+  {
+    "name": "weak_and_short",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 4,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 1,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 1,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "слабый урон и короткий горизонт"
+  },
+  {
+    "name": "attacks_self",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "self"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "self"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "damage неверно направлен на self"
+  },
+  {
+    "name": "heals_enemy",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 12,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 2,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "enemy"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "heal неверно направлен на enemy"
+  },
+  {
+    "name": "mana_bottleneck",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 5,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 3,
+      "deck_size": 12,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 3,
+          "effect": "damage",
+          "value": 3,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 3,
+          "effect": "damage",
+          "value": 4,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": false,
+    "justification": "за 5 раундов не более одной атаки за 3 маны"
+  },
+  {
+    "name": "strategy_trap",
+    "rules": {
+      "game_name": "Fixed Card Duel",
+      "max_rounds": 3,
+      "starting_hp": 10,
+      "mana_cap": 3,
+      "starting_hand_size": 4,
+      "deck_size": 4,
+      "win_condition": "hp_zero",
+      "cards": [
+        {
+          "name": "strike",
+          "cost": 1,
+          "effect": "damage",
+          "value": 1,
+          "target": "enemy"
+        },
+        {
+          "name": "blast",
+          "cost": 3,
+          "effect": "damage",
+          "value": 10,
+          "target": "enemy"
+        },
+        {
+          "name": "restore",
+          "cost": 2,
+          "effect": "heal",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "name": "insight",
+          "cost": 1,
+          "effect": "draw",
+          "value": 1,
+          "target": "self"
+        }
+      ]
+    },
+    "expected_valid": true,
+    "justification": "можно ждать три раунда и сыграть blast, но Greedy сразу расходует ману на strike"
+  }
+]
