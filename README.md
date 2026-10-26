@@ -42,4 +42,5 @@
 - `validation_results_proof_aware.csv` — основные результаты;
 - `proof_certificates.json` — пояснения и численные оценки;
 - `strategy_trap_witness.json` — конкретная траектория победы;
-- `validation_scenarios_extended.json` — 15 контрольных конфигураций.
+- `validation_scenarios_extended.json` — 15 контрольных конфигураций;
+- `ShevtsovAV-spring2025-report edited.pdf` - отчёт по практике.
